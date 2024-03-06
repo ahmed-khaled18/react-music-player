@@ -27,3 +27,13 @@
     cursor: pointer;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .time-controller-container {
+    width: 90%;
+  }
+
+  .control-buttons-container {
+    width: 60%;
+  }
+}
