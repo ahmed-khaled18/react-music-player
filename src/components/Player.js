@@ -70,7 +70,16 @@ const Player = ({ currentSong, isPlaying, setIsPlaying, songs, setCurrentSong })
           }}
         />
       </div>
-      <audio onLoadedData={autoPlayHandler} onLoadedMetadata={timeHandler} onTimeUpdate={timeHandler} ref={audioRef} src={currentSong.audio}></audio>
+      <audio
+        onEnded={() => {
+          skipTrackHandler("skip-forward");
+        }}
+        onLoadedData={autoPlayHandler}
+        onLoadedMetadata={timeHandler}
+        onTimeUpdate={timeHandler}
+        ref={audioRef}
+        src={currentSong.audio}
+      ></audio>
     </div>
   );
 };
